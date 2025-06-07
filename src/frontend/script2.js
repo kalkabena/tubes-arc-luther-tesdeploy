@@ -25,7 +25,7 @@ async function loadUpDownRatio(){
         const base = baseCurrencies[i];
 
         try {
-        const res = await fetch(`/api/updownratio_period?targetCurrency=${base}&period=${period}`);
+        const res = await fetch(`https://tubes-arc-luther-tesdeploy-production.up.railway.app/api/updownratio_period?targetCurrency=${base}&period=${period}`);
         console.log(`Currency = ${base}`);
         const data = await res.json();
 

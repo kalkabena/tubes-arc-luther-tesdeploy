@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log(`Currency = ${base}`);
 
     try {
-      const res = await fetch(`/api/updownratio_period?targetCurrency=${base}&period=7`);
+      const res = await fetch(`https://tubes-arc-luther-tesdeploy-production.up.railway.app/api/updownratio_period?targetCurrency=${base}&period=7`);
       const data = await res.json();
 
       if (data && typeof data.percentChange === 'number') {

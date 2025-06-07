@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const rangeMap = { '30H': '1M', '90H': '3M', '1T': '1Y' };
     const range = rangeMap[rangeText] || '1M';
 
-    fetch(`/api/chart?fromCurr=${fromCurr}&toCurr=IDR&range=${range}`)
+    fetch(`https://tubes-arc-luther-tesdeploy-production.up.railway.app/api/chart?fromCurr=${fromCurr}&toCurr=IDR&range=${range}`)
       .then(res => res.json())
       .then(data => {
         renderChart(data.labels, data.values, fromCurr);
@@ -345,7 +345,7 @@ async function processAndDisplayConversion() { // Nama fungsi diseragamkan
     return;
   }
   
-  const apiUrl = `http://localhost:5000/api/convert`; 
+  const apiUrl = `https://tubes-arc-luther-tesdeploy-production.up.railway.app`; 
   const queryParams = `?amount=${amount}&from=${fromCurrency}&to=${toCurrency}`;
 
   try {
@@ -361,7 +361,7 @@ async function processAndDisplayConversion() { // Nama fungsi diseragamkan
 
     if (exchangeDiv && data.fromCurrency && data.toCurrency && data.originalAmount !== undefined && data.convertedAmount !== undefined) {
       if (parseFloat(data.originalAmount) === 0 && amount === 0) {
-           const rateResponse = await fetch(`http://localhost:5000/api/convert?amount=1&from=${data.fromCurrency}&to=${data.toCurrency}`);
+           const rateResponse = await fetch(`https://tubes-arc-luther-tesdeploy-production.up.railway.app/api/convert?amount=1&from=${data.fromCurrency}&to=${data.toCurrency}`);
            if (rateResponse.ok) {
                const rateData = await rateResponse.json();
                exchangeDiv.innerText = `1 ${data.fromCurrency} = ${parseFloat(rateData.convertedAmount).toFixed(4)} ${data.toCurrency}`;
@@ -435,7 +435,7 @@ async function initializeConverterPageIndexHTML() {
   if (exchangeDiv && fromCurrencyInitial && toCurrencyInitial) {
       if (fromCurrencyInitial && toCurrencyInitial) {
           try {
-              const response = await fetch(`http://localhost:5000/api/convert?amount=1&from=${fromCurrencyInitial}&to=${toCurrencyInitial}`);
+              const response = await fetch(`https://tubes-arc-luther-tesdeploy-production.up.railway.app/api/convert?amount=1&from=${fromCurrencyInitial}&to=${toCurrencyInitial}`);
               if (response.ok) {
                   const data = await response.json();
                   exchangeDiv.innerText = `1 ${data.fromCurrency} = ${parseFloat(data.convertedAmount).toFixed(2)} ${data.toCurrency}`;
