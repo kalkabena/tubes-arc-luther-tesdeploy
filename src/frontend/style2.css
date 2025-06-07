@@ -1,0 +1,808 @@
+body {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0px;
+  padding: 0px;
+}
+
+.header {
+  background-image: url(Background.png);
+  background-size: cover;
+  width: 100vw;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  position: absolute;
+  top: 30px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.title h1 {
+  color: white;
+  font-family: "Century Gothic";
+  font-size: 40px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.title h4 {
+  color: white;
+  font-family: "Century Gothic";
+  font-size: 20px;
+  font-weight: lighter;
+  margin: 0px;
+  padding: 0px;
+}
+
+@media (max-width: 800px) {
+  .title h1 {
+    font-size: 35px;
+  }
+
+  .title h4 {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    top: 50px;
+  }
+  .title h1 {
+    font-size: 25px;
+    top: 50px;
+  }
+
+  .title h4 {
+    font-size: 12px;
+  }
+}
+
+.container {
+  background-color: rgb(255, 255, 255);
+  width: 80vw;
+  height: 500px;
+  position: absolute;
+  top: 150px;
+  border-radius: 30px;
+  box-shadow: 0px 5px 10px 2px gray;
+}
+.mid {
+  background-color: rgb(255, 255, 255);
+  width: 100vw;
+  height: 1000px;
+}
+.footer {
+  background-color: rgb(14, 2, 2);
+  width: 100vw;
+  height: 150px;
+}
+
+.header2 {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.konversi {
+  width: 50%;
+  text-decoration: none;
+  color: rgb(112, 112, 112);
+  font-family: "Century Gothic";
+  font-size: 20px;
+  font-weight: lighter;
+  transition: 0.1s;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5%;
+}
+
+.grafik {
+  width: 50%;
+  text-decoration: none;
+  color: rgb(112, 112, 112);
+  font-family: "Century Gothic";
+  font-size: 20px;
+  font-weight: lighter;
+  transition: 0.1s;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 5%;
+}
+
+.konversi:hover,
+.grafik:hover {
+  font-weight: bold;
+  color: black;
+}
+
+.active {
+  font-weight: bold;
+  color: black;
+}
+
+.konversi:hover ~ .grafik {
+  font-weight: lighter;
+  color: rgb(112, 112, 112);
+}
+
+@media (max-width: 800px) {
+  .konversi {
+    font-size: 18px;
+  }
+  .grafik {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .konversi {
+    font-size: 15px;
+  }
+  .grafik {
+    font-size: 15px;
+  }
+}
+
+.buttons {
+  width: 100%;
+  padding-top: 15px;
+  height: 30px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40%;
+}
+
+.country {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.countryOp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.indicator {
+  border-style: solid;
+  border-width: 3px 0px 3px 3px;
+  border-color: rgba(0, 166, 255, 0.94);
+  width: 70px;
+  height: 24px;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.countrybut {
+  border-style: solid;
+  background-color: rgba(0, 166, 255, 0.94);
+  border-width: 3px 3px 3px 0px;
+  border-color: rgba(0, 166, 255, 0.94);
+  width: 30px;
+  height: 28.8px;
+  border-radius: 0px 10px 10px 0px;
+  color: white;
+  transition: 0.1s;
+}
+
+.countrybut:hover {
+  background-color: rgba(0, 130, 200, 0.94);
+  border-color: rgba(0, 130, 200, 0.94);
+}
+
+.countrycontainer {
+  background-color: rgba(0, 166, 255, 0.94);
+  width: 100px;
+  height: 200px;
+  position: relative;
+  top: 10px;
+  left: -1.5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 3px 1px silver;
+}
+
+.countrycontainer button p {
+  color: white;
+}
+
+.countrycontainer button,
+.selected-display {
+  height: 30px;
+  width: 100%;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  background-color: transparent;
+  font-family: "Century Gothic";
+  font-weight: lighter;
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+}
+
+.countrycontainer button:hover {
+  background-color: rgba(0, 161, 248, 0.94);
+}
+
+.countrycontainer img {
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+}
+
+.activecountry {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  height: 100%;
+  gap: 5px;
+}
+
+.activecountry h5 {
+  font-family: "Century Gothic", sans-serif;
+  font-weight: lighter;
+  font-size: 15px;
+}
+
+.USDflag {
+  background-image: url("image/USD.png");
+  background-size: cover;
+  background-position-x: -4.5px;
+  border-radius: 100%;
+  width: 19px;
+  height: 19px;
+}
+
+.EURflag {
+  background-image: url("image/EUR.png");
+  background-size: cover;
+  background-position-x: -4.7px;
+  border-radius: 100%;
+  width: 19px;
+  height: 19px;
+}
+
+.CNYflag {
+  background-image: url("image/CNY.png");
+  background-size: cover;
+  background-position-x: -0px;
+  border-radius: 100%;
+  width: 19px;
+  height: 19px;
+}
+
+.JPYflag {
+  background-image: url("image/JPY.png");
+  background-size: cover;
+  background-position-x: -4.7px;
+  border-radius: 100%;
+  width: 19px;
+  height: 19px;
+}
+
+.SGDflag {
+  background-image: url("image/SGD.png");
+  background-size: cover;
+  background-position-x: -4.5px;
+  border-radius: 100%;
+  width: 19px;
+  height: 19px;
+}
+
+.MYRflag {
+  background-image: url("image/MYR.png");
+  background-size: cover;
+  background-position-x: -4.5px;
+  border-radius: 100%;
+  width: 19px;
+  height: 19px;
+}
+
+.keRupiah {
+  color: rgb(74, 97, 130);
+  font-family: "Century Gothic";
+  font-weight: bold;
+  font-size: 20px;
+}
+
+@media (max-width: 900px) {
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .country {
+    transform: translateX(-200px);
+  }
+  .keRupiah {
+    font-size: 18px;
+  }
+  .indicator {
+    height: 22px;
+    width: 55px;
+  }
+  .countrybut {
+    height: 26.8px;
+    width: 20px;
+    font-size: 10px;
+  }
+  .countrycontainer {
+    width: 75px;
+  }
+  .countrycontainer button {
+    font-size: 14px;
+    gap: 9px;
+  }
+  .activecountry h5 {
+    font-size: 13px;
+  }
+  .activecountry div {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 750px) {
+  .country {
+    transform: translateX(-150px);
+  }
+}
+
+@media (max-width: 600px) {
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .country {
+    transform: translateX(-75px);
+  }
+  .keRupiah {
+    font-size: 15px;
+  }
+  .indicator {
+    height: 18px;
+    width: 50px;
+  }
+  .countrybut {
+    height: 22.8px;
+    width: 20px;
+    font-size: 10px;
+  }
+  .countrycontainer {
+    width: 70px;
+  }
+  .countrycontainer button {
+    font-size: 12px;
+    gap: 6px;
+  }
+  .activecountry h5 {
+    font-size: 11px;
+  }
+  .activecountry div {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .country {
+    transform: translateX(-60px);
+  }
+  .keRupiah {
+    font-size: 14px;
+  }
+  .indicator {
+    height: 18px;
+    width: 50px;
+  }
+  .countrybut {
+    height: 22.8px;
+    width: 20px;
+    font-size: 9px;
+  }
+  .countrycontainer button {
+    font-size: 11px;
+    gap: 5px;
+  }
+  .activecountry h5 {
+    font-size: 10px;
+  }
+  .activecountry div {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.nav button {
+  width: 4vw;
+  height: 35px;
+  background-color: transparent;
+  border: none;
+  border-radius: 999px;
+  color: rgb(74, 97, 130);
+  font-family: "Century Gothic";
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.1s;
+}
+
+.activeop:hover {
+  background-color: rgba(0, 166, 255, 0.94);
+  color: white;
+}
+
+.activeop:focus {
+  background-color: rgba(0, 166, 255, 0.94);
+  color: white;
+}
+
+@media (max-width: 800px) {
+  .nav button {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav button {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav button {
+    font-size: 14px;
+  }
+}
+
+.footer {
+  background-color: rgb(15, 15, 15);
+  width: 100vw;
+  height: 200px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-family: "Century Gothic";
+}
+
+@media (max-width: 800px) {
+  .footer {
+    height: 190px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    height: 175px;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer {
+    height: 160px;
+  }
+}
+
+.footer-sosmed {
+  width: 100vw;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  gap: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-sosmed a {
+  color: rgb(0, 0, 0);
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  transition: 0.1s;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+@media (max-width: 800px) {
+  .footer-sosmed a {
+    font-size: 28px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-sosmed a {
+    font-size: 22px;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer-sosmed a {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.footer-sosmed a:hover {
+  color: rgb(247, 91, 184);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2%;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 800px) {
+  .footer-links {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-links {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer-links {
+    font-size: 8px;
+  }
+}
+
+.footer-links a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.1s;
+}
+
+.footer-links a:hover {
+  color: rgb(0, 187, 255);
+}
+
+p.footer-copyright {
+  font-size: 14px;
+  margin-top: 30px;
+  color: #b0b0b0;
+}
+
+@media (max-width: 800px) {
+  p.footer-copyright {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  p.footer-copyright {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  p.footer-copyright {
+    font-size: 8px;
+  }
+}
+
+.mid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mid h2 {
+  color: black;
+  padding-top: 350px;
+  top: 100px;
+  font-family: "Century Gothic";
+  font-size: 25px;
+}
+
+.contents {
+  position: relative;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 60vw;
+  align-items: center;
+}
+
+.contents div h4 {
+  color: rgb(74, 97, 130);
+  font-family: "Century Gothic";
+  font-size: 20px;
+}
+
+.contents div h5 {
+  font-family: "Century Gothic";
+  font-weight: lighter;
+  font-size: 15px;
+  height: 60px;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .contents {
+    width: 70vw;
+    margin-top: 20px;
+  }
+  .contents div h4 {
+    font-size: 15px;
+  }
+  .contents div h5 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contents {
+    width: 80vw;
+    margin-top: 15px;
+  }
+  .footer-copyright {
+    font-size: 14px;
+  }
+  .contents div h5 {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .contents {
+    width: 85vw;
+    margin-top: 10px;
+  }
+  .contents div h4 {
+    font-size: 13px;
+  }
+  .contents div h5 {
+    font-size: 12px;
+  }
+}
+
+.contents div i {
+  height: 60px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.jenis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tingkat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.perubahan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .mid h2 {
+    font-size: 20px;
+  }
+  .parameter h4 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .mid h2 {
+    font-size: 15px;
+  }
+
+  .parameter {
+    gap: 8vw;
+  }
+
+  .parameter h4 {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .mid h2 {
+    font-size: 13px;
+  }
+
+  .parameter {
+    gap: 6vw;
+  }
+
+  .parameter h4 {
+    font-size: 11px;
+  }
+}
+
+.rows {
+  position: absolute;
+  transform: translateY(35px);
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.rows div {
+  width: 100%;
+  height: 60px;
+  border-style: solid;
+  border-color: rgb(226, 226, 226);
+  border-width: 0px 0px 2px 0px;
+}
+
+.graph {
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.graph canvas {
+  width: 100% !important;
+  height: 300px !important;
+  max-width: 85%;  /* Menyesuaikan kelebaran grafik */
+  margin: 0 auto;  /* Agar canvas tetap di tengah */
+  display: block;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ConvertIR</title>
+    <link rel="stylesheet" href="style2.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.7.0/css/flag-icons.min.css"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <div class="title">
+        <h1>Nilai IDR di Dunia</h1>
+        <h4>Powered by ExchangeRate & Frankfurter</h4>
+      </div>
+      <div class="container">
+        <div class="header2">
+          <a href="index.html" class="konversi">Konversi</a>
+          <a href="#" class="grafik active">Grafik</a>
+        </div>
+        <div class="buttons">
+          <div class="country">
+            <div class="countryOp">
+              <div class="indicator">
+                <div class="activecountry">
+                  <h5>USD</h5>
+                  <div class="USDflag"></div>
+                </div>
+                <div class="countrycontainer">
+                  <!--div countrycontainer initially tidak muncul, tetapi muncul ketika button class="countrybut" setelah diklik (berstatus "focus") kemudian hilang lagi ketika diklik (you get the idea)-->
+                  <button style="cursor: pointer" class="butUSD">
+                    <p>USD</p>
+                    <div class="USDflag"></div>
+                  </button>
+                  <button style="cursor: pointer" class="butEUR">
+                    <p>EUR</p>
+                    <div class="EURflag"></div>
+                  </button>
+                  <button style="cursor: pointer" class="butCNY">
+                    <p>CNY</p>
+                    <div class="CNYflag"></div>
+                  </button>
+                  <button style="cursor: pointer" class="butJPY">
+                    <p>JPY</p>
+                    <div class="JPYflag"></div>
+                  </button>
+                  <button style="cursor: pointer" class="butSGD">
+                    <p>SGD</p>
+                    <div class="SGDflag"></div>
+                  </button>
+                  <button style="cursor: pointer" class="butMYR">
+                    <p>MYR</p>
+                    <div class="MYRflag"></div>
+                  </button>
+                </div>
+              </div>
+              <button class="countrybut">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="keRupiah">ke Rupiah</div>
+          </div>
+          <nav class="nav">
+            <button style="cursor: pointer" class="activeop">30H</button>
+            <button style="cursor: pointer">90H</button>
+            <button style="cursor: pointer">1T</button>
+          </nav>
+        </div>
+        <div class="graph"><canvas id="chart-canvas"></canvas></div>
+      </div>
+    </div>
+    <div class="mid">
+      <h2><i>Real-Time </i>Tingkat Kenaikan Mata Uang IDR</h2>
+      <div class="contents">
+        <div class="jenis">
+          <h4>Jenis Konversi</h4>
+          <h5>IDR/USD</h5>
+          <h5>IDR/EUR</h5>
+          <h5>IDR/CNY</h5>
+          <h5>IDR/JPY</h5>
+          <h5>IDR/SGD</h5>
+          <h5>IDR/MYR</h5>
+        </div>
+        <div class="tingkat">
+          <h4>Tingkat Kenaikan</h4>
+          <!--nilai tingkat1 didapat dari kalkukasi API-->
+          <h5>Loading...</h5>
+          <h5>Loading...</h5>
+          <h5>Loading...</h5>
+          <h5>Loading...</h5>
+          <h5>Loading...</h5>
+          <h5>Loading...</h5>
+        </div>
+        <div class="perubahan">
+          <h4>Perubahan</h4>
+          <!--fas fa-caret-up/down bergantung dari API dengan kurang dari 1 maka down jika di atas 1 maka up-->
+          <i class="fas fa-caret-up"></i>
+          <i class="fas fa-caret-up"></i>
+          <i class="fas fa-caret-up"></i>
+          <i class="fas fa-caret-up"></i>
+          <i class="fas fa-caret-up"></i>
+          <i class="fas fa-caret-up"></i>
+        </div>
+        <div class="rows">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer-sosmed">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-discord"></i></a>
+      </div>
+      <div class="footer-links">
+        <a href="#">Perusahaan</a>
+        <a href="#">Hubungi Kami</a>
+        <a href="#">Privasi dan Lisensi</a>
+        <a href="#">Setelan Cookies</a>
+        <a href="#">Tim Kami</a>
+      </div>
+      <p class="footer-copyright">
+        Copyright &copy; 2025 ConvertIR.d All rights reserved. VAT no.
+        085552223334.
+      </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script2.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
