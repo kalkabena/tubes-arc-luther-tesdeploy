@@ -221,6 +221,8 @@ app.get('/api/chart', async (req, res) => {
 });
 
 
-app.listen(PORT, () =>{
+const server = app.listen(PORT, () =>{
     console.log(`Server is running at http://localhost:${PORT}`)
 })
+
+server.setMaxListeners(50);
