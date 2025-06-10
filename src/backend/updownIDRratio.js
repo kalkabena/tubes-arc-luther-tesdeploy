@@ -39,7 +39,7 @@ async function compareHistoricalPeriod(targetCurrency, period) {
     return {
       todayRate,
       pastRate,
-      percentChange: Number(percentChange.toFixed(5))
+      percentChange: Number(percentChange.toFixed(10))
     };
   } catch (error) {
     console.error('❌ Failed to fetch data from Frankfurter API:', error.message);

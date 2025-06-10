@@ -462,12 +462,21 @@ body {
   transition: 0.1s;
 }
 
-.activeop:hover {
+/* This makes the active state visible by default */
+.nav button.activeop {
   background-color: rgba(0, 166, 255, 0.94);
   color: white;
 }
 
-.activeop:focus {
+/* Hover state for all buttons */
+.nav button:hover {
+  background-color: rgba(0, 166, 255, 0.94);
+  color: white;
+}
+
+/* Focus state for accessibility */
+.nav button:focus {
+  outline: none;
   background-color: rgba(0, 166, 255, 0.94);
   color: white;
 }
@@ -475,18 +484,21 @@ body {
 @media (max-width: 800px) {
   .nav button {
     font-size: 17px;
+    width: 55px;
   }
 }
 
 @media (max-width: 600px) {
   .nav button {
     font-size: 15px;
+    width: 45px;
   }
 }
 
 @media (max-width: 400px) {
   .nav button {
     font-size: 14px;
+    width: 40px;
   }
 }
 
@@ -802,7 +814,7 @@ p.footer-copyright {
 .graph canvas {
   width: 100% !important;
   height: 300px !important;
-  max-width: 85%;  /* Menyesuaikan kelebaran grafik */
-  margin: 0 auto;  /* Agar canvas tetap di tengah */
+  max-width: 85%; /* Menyesuaikan kelebaran grafik */
+  margin: 0 auto; /* Agar canvas tetap di tengah */
   display: block;
 }
