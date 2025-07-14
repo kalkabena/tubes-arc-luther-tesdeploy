@@ -234,7 +234,7 @@ async function processAndDisplayConversion() { // Nama fungsi diseragamkan
     return;
   }
   
-  const apiUrl = `https://tubes-arc-luther-tesdeploy-production.up.railway.app/api/convert`; 
+  const apiUrl = `http://ondevconvertir-production.up.railway.app/api/convert`; 
   const queryParams = `?amount=${amount}&from=${fromCurrency}&to=${toCurrency}`;
 
   try {
@@ -250,7 +250,7 @@ async function processAndDisplayConversion() { // Nama fungsi diseragamkan
 
     if (exchangeDiv && data.fromCurrency && data.toCurrency && data.originalAmount !== undefined && data.convertedAmount !== undefined) {
       if (parseFloat(data.originalAmount) === 0 && amount === 0) {
-           const rateResponse = await fetch(`https://tubes-arc-luther-tesdeploy-production.up.railway.app/api/convert?amount=1&from=${data.fromCurrency}&to=${data.toCurrency}`);
+           const rateResponse = await fetch(`http://ondevconvertir-production.up.railway.app/api/convert?amount=1&from=${data.fromCurrency}&to=${data.toCurrency}`);
            if (rateResponse.ok) {
                const rateData = await rateResponse.json();
                exchangeDiv.innerText = `1 ${data.fromCurrency} = ${parseFloat(rateData.convertedAmount).toFixed(4)} ${data.toCurrency}`;
@@ -326,7 +326,7 @@ async function initializeConverterPageIndexHTML() {
   if (exchangeDiv && fromCurrencyInitial && toCurrencyInitial) {
       if (fromCurrencyInitial && toCurrencyInitial) {
           try {
-              const response = await fetch(`https://tubes-arc-luther-tesdeploy-production.up.railway.app/api/convert?amount=1&from=${fromCurrencyInitial}&to=${toCurrencyInitial}`);
+              const response = await fetch(`http://ondevconvertir-production.up.railway.app/api/convert?amount=1&from=${fromCurrencyInitial}&to=${toCurrencyInitial}`);
               if (response.ok) {
                   const data = await response.json();
                   exchangeDiv.innerText = `1 ${data.fromCurrency} = ${parseFloat(data.convertedAmount).toFixed(2)} ${data.toCurrency}`;

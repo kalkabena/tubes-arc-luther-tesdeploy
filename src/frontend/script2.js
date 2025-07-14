@@ -25,7 +25,7 @@ async function loadUpDownRatio(){
         const base = baseCurrencies[i];
 
         try {
-        const res = await fetch(`https://tubes-arc-luther-tesdeploy-production.up.railway.app/api/updownratio_period?targetCurrency=${base}&period=${period}`);
+        const res = await fetch(`http://ondevconvertir-production.up.railway.app/api/updownratio_period?targetCurrency=${base}&period=${period}`);
         console.log(`Currency = ${base}`);
         const data = await res.json();
 
@@ -96,7 +96,7 @@ async function loadUpDownRatio(){
     const rangeMap = { '30H': '1M', '90H': '3M', '1T': '1Y' };
     const range = rangeMap[rangeText] || '1M';
 
-    fetch(`https://tubes-arc-luther-tesdeploy-production.up.railway.app/api/chart?fromCurr=${fromCurr}&toCurr=IDR&range=${range}`)
+    fetch(`http://ondevconvertir-production.up.railway.app/api/chart?fromCurr=${fromCurr}&toCurr=IDR&range=${range}`)
       .then(res => res.json())
       .then(data => {
         renderChart(data.labels, data.values, fromCurr);
