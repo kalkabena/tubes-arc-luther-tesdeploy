@@ -96,7 +96,7 @@ async function loadUpDownRatio(){
     const rangeMap = { '30H': '1M', '90H': '3M', '1T': '1Y' };
     const range = rangeMap[rangeText] || '1M';
 
-    fetch(`http://ondevconvertir-production.up.railway.app/api/chart?fromCurr=${fromCurr}&toCurr=IDR&range=${range}`)
+    fetch(`https://http://ondevconvertir-production.up.railway.app/api/chart?fromCurr=${fromCurr}&toCurr=IDR&range=${range}`)
       .then(res => res.json())
       .then(data => {
         renderChart(data.labels, data.values, fromCurr);
